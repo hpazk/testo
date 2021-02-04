@@ -20,7 +20,24 @@ func main() {
 	}))
 
 	e.GET("/users", func(c echo.Context) error {
-		meta := M{"message": "success"}
+		meta := M{
+			"message":  "success",
+			"resource": "users",
+		}
+		return c.JSON(http.StatusOK, meta)
+	})
+	e.GET("/products", func(c echo.Context) error {
+		meta := M{
+			"message":  "success",
+			"resource": "products",
+		}
+		return c.JSON(http.StatusOK, meta)
+	})
+	e.GET("/orders", func(c echo.Context) error {
+		meta := M{
+			"message":  "success",
+			"resource": "orders",
+		}
 		return c.JSON(http.StatusOK, meta)
 	})
 
